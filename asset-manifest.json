@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactMoreConcepts/static/css/main.89134e6c.css",
+    "main.js": "/ReactMoreConcepts/static/js/main.cdc4781d.js",
+    "static/js/787.293c2eec.chunk.js": "/ReactMoreConcepts/static/js/787.293c2eec.chunk.js",
+    "index.html": "/ReactMoreConcepts/index.html",
+    "main.89134e6c.css.map": "/ReactMoreConcepts/static/css/main.89134e6c.css.map",
+    "main.cdc4781d.js.map": "/ReactMoreConcepts/static/js/main.cdc4781d.js.map",
+    "787.293c2eec.chunk.js.map": "/ReactMoreConcepts/static/js/787.293c2eec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89134e6c.css",
+    "static/js/main.cdc4781d.js"
+  ]
+}
