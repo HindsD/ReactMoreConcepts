@@ -3,10 +3,11 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Divider } from '@mui/material';
 import Medal from './Medal';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 class Country extends Component {
     render() { 
-        const { onIncrementGold, onDecrementGold, onIncrementSilver, onDecrementSilver, onIncrementBronze, onDecrementBronze, country, getCountryMedalCount } = this.props;
+        const { onDelete, onIncrementGold, onDecrementGold, onIncrementSilver, onDecrementSilver, onIncrementBronze, onDecrementBronze, country, getCountryMedalCount } = this.props;
         return (
             <div>
                 <Box sx={{
@@ -21,9 +22,11 @@ class Country extends Component {
                 }}>
                     <Grid container spacing={1}>
                         <Grid item xs={12} md={12}>
-                            <div className='CountryName'>{country.name}
+                            <div className='CountryName'>{country.name}<DeleteIcon className='delete' onClick={() => onDelete(country.id)}></DeleteIcon>
                             <div className='MedalNumber'> {getCountryMedalCount(country.id)}  Medals </div>
                             </div>
+                            
+                            
                         </Grid>
                         
                         <Grid item xs={12} md={12}>

@@ -77,3 +77,20 @@
   font-size: 100px;
   font-family: 'Luckiest Guy', cursive;
 }
+
+.fab {
+    margin: 0px;
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    left: auto;
+    position: fixed;
+}
+
+.delete:hover {
+  cursor: pointer;
+}
+
+.delete {
+  float: right;
+}
