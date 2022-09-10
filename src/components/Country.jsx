@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Divider } from '@mui/material';
 import Medal from './Medal';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-class Country extends Component {
-    render() { 
-        const { onDelete, onIncrementGold, onDecrementGold, onIncrementSilver, onDecrementSilver, onIncrementBronze, onDecrementBronze, country, getCountryMedalCount } = this.props;
+const Country = (props) => {
+        const { onDelete, onIncrementGold, onDecrementGold, onIncrementSilver, onDecrementSilver, onIncrementBronze, onDecrementBronze, country, getCountryMedalCount } = props;
         return (
             <div>
                 <Box sx={{
@@ -39,6 +38,6 @@ class Country extends Component {
             </div>
         );
     }
-}
+
  
 export default Country;

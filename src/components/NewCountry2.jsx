@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -9,31 +9,30 @@ import DialogTitle from "@mui/material/DialogTitle";
 import AddIcon from '@mui/icons-material/Add';
 import { Fab } from "@mui/material";
 
-class NewCountry2 extends Component {
-  state = { name: "", open: false };
-  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
-  saveWord = () => {
-    const { name } = this.state;
+const NewCountry2 = (props) => {
+  const [ name, setName ] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+  const {onAdd} = props;
+  const handleChange = (e) => setName(e.target.value);
+  const saveWord = () => {
     if (name && name.trim().length > 0) {
-        this.props.onAdd(name);
-        this.setState({ open: !this.state.open });
+        onAdd(name);
+        setOpen(false);
     }
   };
-  render() {
-    const { name } = this.state;
     return (
       <div>
         <div className="fab">
           <Fab
             color="primary"
             aria-label="add"
-            onClick={() => this.setState({ open: !this.state.open })}
+            onClick={() => setOpen(true)}
           >
             <AddIcon />
           </Fab>
         </div>
 
-        <Dialog open={this.state.open}>
+        <Dialog open={open}>
           <DialogTitle>Add Country</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -46,7 +45,7 @@ class NewCountry2 extends Component {
               id="name"
               name="name"
               value={name}
-              onChange={this.handleChange}
+              onChange={handleChange}
               label="Country Name"
               type="text"
               fullWidth
@@ -54,10 +53,10 @@ class NewCountry2 extends Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => this.setState({ open: !this.state.open })}>
+            <Button onClick={() => setOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={this.saveWord}>
+            <Button onClick={saveWord}>
               Save
             </Button>
           </DialogActions>
@@ -65,19 +64,6 @@ class NewCountry2 extends Component {
       </div>
     );
   }
-}
+
 
 export default NewCountry2;
-
-// export default function FormDialog() {
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-
-// }

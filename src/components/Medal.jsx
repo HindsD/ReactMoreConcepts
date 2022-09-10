@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 
-class Medal extends Component {
-    render() { 
-        const { onIncrementGold, onDecrementGold, onIncrementSilver, onDecrementSilver, onIncrementBronze, onDecrementBronze, country } = this.props;
+const Medal = (props) => {
+        const { onIncrementGold, onDecrementGold, onIncrementSilver, onDecrementSilver, onIncrementBronze, onDecrementBronze, country } = props;
         return (
         <div>
             <Grid container spacing={2}>
@@ -56,6 +55,5 @@ class Medal extends Component {
         </div>
         );
     }
-}
  
 export default Medal;
